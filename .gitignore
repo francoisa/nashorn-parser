@@ -35,3 +35,10 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
+/nbproject/private/
+/build/
+src/arithmetic.tokens
+src/arithmeticLexer.js
+src/arithmeticLexer.tokens
+src/arithmeticListener.js
+src/arithmeticParser.js
