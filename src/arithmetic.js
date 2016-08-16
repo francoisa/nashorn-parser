@@ -17,13 +17,18 @@ function parse(toParse) {
     var parser = new arithmeticParser(tokens);
     parser.buildParseTrees = true;
     var tree = parser.equation();
+	var result = [];
     for (var i = 0; i < tree.children.length; ++i) {
 		var child = tree.children[i];
 		var name = parser.ruleNames[child.ruleIndex];
 		var value = child.getText();
-		print(name + " = " + value);
+		result.push({"rule":  name, "value": value});
 	}
+	return JSON.stringify(result);
 }
 
 var exp = "a = 4 + 5";
-parse(exp);
+print(parse(exp));
+//for (var i = 0; i < result.length; ++i) {
+//	print(result[i].rule + ": " + result[i].value);
+//}
